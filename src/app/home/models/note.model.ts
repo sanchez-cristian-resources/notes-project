@@ -9,23 +9,15 @@
 //     "lastEditAt": "2021-03-08"
 // }
 export class Note {
-  id: string
-  author: string
-  title: string
-  content: string
-  tags: string[]
-  length: number
-  createdAt: number
-  lastEditAt: number
 
-  constructor() {
-    this.id = ''
-    this.author = ''
-    this.title = ''
-    this.content = ''
-    this.tags = []
-    this.length = 0
-    this.createdAt = 0
-    this.lastEditAt = 0
-  }
+  constructor(
+    public id: string,
+    public author: string,
+    public title: string,
+    public content: string,
+    public tags: string[],
+    public length: number,
+    public createdAt: number,
+    public lastEditAt: number,
+  ) {}
 }

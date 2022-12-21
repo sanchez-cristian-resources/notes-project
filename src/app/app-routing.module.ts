@@ -14,7 +14,12 @@ const routes: Routes = [
   {
     path: 'app',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'edit',
+    loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
   }
+
 ];
 
 @NgModule({

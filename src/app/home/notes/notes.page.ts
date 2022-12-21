@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from '../models/note.model';
+import { NotesService } from '../services/notes.service';
 
 @Component({
   selector: 'app-notes',
@@ -7,12 +8,19 @@ import { Note } from '../models/note.model';
   styleUrls: ['./notes.page.scss'],
 })
 export class NotesPage implements OnInit {
-  notes: string[]
-  constructor() { 
-    this.notes = ['Note 1', 'Note 2', 'Note 3']
+  notes: Note[]
+  constructor(
+    private notesService: NotesService
+  ) { 
+    this.notes = []
   }
-
-  ngOnInit() {
+  
+  ngOnInit() {    
+    this.notesService
+      .getNotes()
+      .subscribe(notes => {
+        this.notes = notes
+      })
   }
 
 }
