@@ -1,0 +1,10 @@
+<ion-content>
+    <ion-buttons>   
+        <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <h1 class="ion-padding">Notes</h1>
+    <app-note-card
+        *ngFor="let note of notes"
+        [note]="note"
+    ></app-note-card>
+</ion-content>
