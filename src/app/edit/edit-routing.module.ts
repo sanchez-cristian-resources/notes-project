@@ -6,12 +6,11 @@ import { EditPage } from './edit.page';
 const routes: Routes = [
   {
     path: '',
-    component: EditPage,
     children: [
       {
         path: ':id',
         loadChildren: () => import('./edit-details/edit-details.module').then( m => m.EditDetailsPageModule)
-      }
+      },
     ]
   }
 ];

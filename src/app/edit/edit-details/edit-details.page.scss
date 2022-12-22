@@ -1,0 +1,48 @@
+
+#title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#author {
+    font-size: 1.2rem;
+}
+
+input {
+    width: 50%;
+    outline: none;
+    border: none; 
+    background-color: transparent;
+}
+
+#row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px; 
+    margin-bottom: 20px;
+}
+
+#container {
+    height: 100%;
+}
+
+textarea {
+    outline: none;
+    height: calc(100% - 160px);
+    width: 100%;
+    margin-bottom: 40px; 
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 20px; 
+    font-size: 1.1rem;
+}
+
+button {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

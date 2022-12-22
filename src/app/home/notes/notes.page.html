@@ -2,9 +2,16 @@
     <ion-buttons>   
         <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <h1 class="ion-padding">Notes</h1>
+    <h1>Notes</h1>
+    <div id="searcher">
+        <input placeholder="Search a note"/>
+        <div id="create-button">
+            <ion-icon name="add-circle"></ion-icon>
+            <button>create</button>
+        </div>
+    </div>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content>
     <ion-list>
       <app-note-card
         *ngFor="let note of notes"

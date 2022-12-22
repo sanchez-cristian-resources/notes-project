@@ -1,31 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Note } from '../models/note.model';
-import { tap, map } from 'rxjs';
+import { tap, map, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesService {
-  notes: Note[]
+  private _notes = new BehaviorSubject<Note[]>([]);
+
+  get notes() {
+    return this._notes.asObservable();
+  }
 
   constructor(
     private http: HttpClient
-  ) { 
-    this.notes = []
-  }
+  ) { }
 
   getNotes() {
     return this.http
-      .get<Note[]>('https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes.json')
+      .get<{ [key: string]: Note }>(
+        'https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes.json'
+      )
       .pipe(
         map(resData => {
-          const notes: Note[] = [];
+          const notes = [];
           for (const key in resData) {
             if (resData.hasOwnProperty(key)) {
               notes.push(
                 new Note(
-                  resData[key].id,
+                  key,
                   resData[key].author,
                   resData[key].title,
                   resData[key].content,
@@ -38,8 +42,11 @@ export class NotesService {
             }
           }
           return notes;
+        }),
+        tap(notes => {
+          this._notes.next(notes);
         })
-      )
+      );
   }
 
   addNote( note: Note ) {
@@ -53,29 +60,21 @@ export class NotesService {
   getNote(id: string) {
     return this.http
       .get<Note>(
-        `https://https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes/${id}.json`
+        `https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes/${id}.json`, 
       )
       .pipe(
-        map(note => {
+        map(notesData => {
           return new Note(
             id,
-            note.author,
-            note.title,
-            note.content,
-            note.tags,
-            note.length,
-            note.createdAt,
-            note.lastEditAt
+            notesData.author,
+            notesData.title,
+            notesData.content,
+            notesData.tags,
+            notesData.createdAt,
+            notesData.lastEditAt,
+            notesData.length
           );
         })
       );
-  }
-
-  updateNote(id: string) {
-    return this.http
-      .put<Note>(
-        `https://https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes/${id}.json`, 
-
-      )
   }
 }
