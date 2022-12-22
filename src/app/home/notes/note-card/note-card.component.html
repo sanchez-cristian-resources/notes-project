@@ -1,5 +1,22 @@
-<ion-item>
-    <p (click)="editItem()">
+<div id="parent" (click)="editItem()">
+    <h1>
         {{note.title}}
+    </h1>
+    <p id="author">
+        {{note.author}}
     </p>
-</ion-item>
+    <div id="bottom-row">
+        <div class="bottom-row-item">
+            <ion-icon name="pricetag-outline"></ion-icon>
+            <p>
+                {{note.tags[0]}} 
+            </p>
+        </div>
+        <div class="bottom-row-item">
+            <ion-icon name="flag-outline"></ion-icon>
+            <p>
+                {{note.lastEditAt}}
+            </p>
+        </div>
+    </div>
+</div>

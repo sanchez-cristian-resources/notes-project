@@ -24,14 +24,10 @@ export class NoteCardComponent implements OnInit {
   ngOnInit() {}
 
   addItem() {
-    const result = this.notesService.addNote() 
-
-    result.subscribe(res => {
-        console.log(res)
-    })
+    
   }
 
   editItem() {
-    this.router.navigate(['/edit-note', this.note.id])
+    this.router.navigate(['/edit', this.note.id])
   }
 }

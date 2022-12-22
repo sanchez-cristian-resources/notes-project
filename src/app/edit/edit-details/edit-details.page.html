@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>edit-details</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-padding">
+  <ion-buttons>   
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
 </ion-header>
 
-<ion-content>
-    {{note.title}}
+<ion-content [scrollY]="false" class="ion-padding">
+    <div id="container">
+      <div id="row">
+        <input id="title" [defaultValue]="note.title"/>
+        <input id="author" [defaultValue]="note.author"/>
+      </div>
+      <textarea [value]="note.content"></textarea>
+      <div id="row">
+        <button id="delete">Delete</button>
+        <button id="save">Save</button>
+      </div>
+    </div>
 </ion-content>
+
+
+
+<!-- <form id="note-container" [formGroup]="editNoteForm">
+  <div id="headers-container">
+    <input 
+      id="title" 
+      value="{{ note.title || 'Title' }}" 
+      formControlName="title"
+    >
+    <input 
+      id="author" 
+      value="{{ note.author || 'Author name' }}" 
+      formControlName="author"  
+    >
+  </div>
+  <div id="textarea-container">
+      <p id="char-counter">{{content.value.length}} Chars </p>
+      <textarea
+          formControlName="content"
+      ></textarea>
+  </div>
+</form> -->
