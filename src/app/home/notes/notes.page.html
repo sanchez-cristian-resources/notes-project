@@ -4,7 +4,10 @@
     </ion-buttons>
     <h1>Notes</h1>
     <div id="searcher">
-        <input placeholder="Search a note"/>
+        <input 
+            placeholder="Search a note"
+            (input)="update($event)"  
+        />
         <div id="create-button">
             <ion-icon name="add-circle"></ion-icon>
             <button>create</button>
@@ -14,7 +17,7 @@
 <ion-content>
     <ion-list>
       <app-note-card
-        *ngFor="let note of notes"
+        *ngFor="let note of variableNotes"
         [note]="note"
       ></app-note-card>
     </ion-list>
