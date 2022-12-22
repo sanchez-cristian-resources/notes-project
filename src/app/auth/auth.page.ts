@@ -20,7 +20,7 @@ export class AuthPage implements OnInit {
   onLogin() {
     this.authService.login();
     if ( this.authService.logged ) {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/app');
     }
   }
 

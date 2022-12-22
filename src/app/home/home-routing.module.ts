@@ -6,7 +6,17 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: HomePage,
+    children: [
+        {
+            path: 'dashboard',
+            loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+        }, 
+        {
+            path: 'notes',
+            loadChildren: () => import('./notes/notes.module').then( m => m.NotesPageModule)
+        }
+    ]
   }
 ];
 
