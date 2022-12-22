@@ -21,13 +21,13 @@ export class EditDetailsPage implements OnInit {
     private alertCtrl: AlertController,
     private router: Router,
   ) {
-    this.note = new Note('hola', 'hola', 'hla', 'hola', [], 0, 0, 0)
+    this.note = new Note('', '', '', '', [], 0, 0, 0)
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       if (!paramMap.has('id')) {
-        this.navCtrl.navigateBack('/places/tabs/discover');
+        this.navCtrl.navigateBack('/app/notes');
         return;
       }
       
