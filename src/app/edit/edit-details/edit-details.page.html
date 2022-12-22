@@ -1,21 +1,17 @@
-<ion-header class="ion-padding">
+<ion-header>
   <ion-buttons>   
     <ion-back-button></ion-back-button>
   </ion-buttons>
 </ion-header>
 
-<ion-content [scrollY]="false" class="ion-padding">
-    <div id="container">
-      <div id="row">
-        <input id="title" [defaultValue]="note.title"/>
-        <input id="author" [defaultValue]="note.author"/>
-      </div>
-      <textarea [value]="note.content"></textarea>
-      <div id="row">
-        <button id="delete">Delete</button>
-        <button id="save">Save</button>
-      </div>
-    </div>
+<ion-content [scrollY]="false">
+    <input id="title" [defaultValue]="note.title"/>
+    <input id="author" [defaultValue]="note.author"/>
+  <textarea [value]="note.content"></textarea>
+  <div id="row">
+    <button id="delete" (click)="deleteNote()">Delete</button>
+    <button id="save">Save</button>
+  </div>
 </ion-content>
 
 

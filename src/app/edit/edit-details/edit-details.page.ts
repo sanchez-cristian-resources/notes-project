@@ -45,7 +45,7 @@ export class EditDetailsPage implements OnInit {
                   {
                     text: 'Okay',
                     handler: () => {
-                      this.router.navigate(['/places/tabs/discover']);
+                      this.router.navigate(['/app/notes']);
                     }
                   }
                 ]
@@ -60,6 +60,15 @@ export class EditDetailsPage implements OnInit {
     if (this.noteSub) {
       this.noteSub.unsubscribe();
     }
+  }
+
+  deleteNote() {
+    this.notesService
+        .delete(this.note.id)
+        .subscribe(() => {
+            window.location.pathname = '/app/notes'
+        }
+    );
   }
 
 }

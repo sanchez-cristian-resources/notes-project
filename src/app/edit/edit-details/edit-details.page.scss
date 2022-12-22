@@ -4,22 +4,47 @@ ion-header {
     flex-direction: column; 
     justify-content: flex-start;
     background-color: #fff;
+    margin: 20px;
 }
 
 #title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 #author {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: #898989;
+    font-weight: 400;
 }
 
 input {
-    width: 50%;
+    display: block;
+    width: 100%;
     outline: none;
     border: none; 
     background-color: transparent;
+    padding-inline: 25px; 
+    margin-bottom: 10px;
+}
+
+
+#container {
+    height: 100%;
+    box-shadow: inset 0px 10px 10px #000;
+}
+
+textarea {
+    position: relative;
+    outline: none;
+    height: calc(100% - 220px);
+    width: 100%;
+    margin-bottom: 40px; 
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 25px; 
 }
 
 #row {
@@ -29,22 +54,7 @@ input {
     align-items: baseline;
     gap: 10px; 
     margin-bottom: 20px;
-}
-
-#container {
-    height: 100%;
-}
-
-textarea {
-    outline: none;
-    height: calc(100% - 160px);
-    width: 100%;
-    margin-bottom: 40px; 
-    border-radius: 20px;
-    outline: none;
-    border: none;
-    padding: 20px; 
-    font-size: 1.1rem;
+    padding-inline: 25px; 
 }
 
 button {
@@ -52,5 +62,17 @@ button {
     height: 50px;
     border-radius: 10px;
     margin-bottom: 20px;
+    padding-inline: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
+#save {
+    background-color: #3842ff;
+    color: #fff;
+}
+
+#delete {
+    background-color: #ececec;
+    color: #898989;
+}

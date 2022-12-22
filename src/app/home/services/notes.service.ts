@@ -77,4 +77,11 @@ export class NotesService {
         })
       );
   }
+
+  delete(id: string) {
+    return this.http
+      .delete(
+        `https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes/${id}.json`
+      )
+  }
 }

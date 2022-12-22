@@ -14,17 +14,30 @@ export class NotesPage implements OnInit {
   constructor(
     private notesService: NotesService
   ) { 
-    this.notes = []
+    this.notes = this.resfreshNotes()
     this.variableNotes = []
   }
   
-  ngOnInit() {    
+  ngOnInit() { 
+    console.log('ngOnInit')   
     this.notesService
       .getNotes()
       .subscribe(notes => {
         this.notes = notes
         this.variableNotes = [...notes]
       })
+  }
+
+  resfreshNotes() {
+    console.log('refresh will enter')
+    let notes = []
+    this.notesService
+      .getNotes()
+      .subscribe(sNotes => {
+        notes = sNotes
+      })
+
+    return notes
   }
 
   update(value: any) {
