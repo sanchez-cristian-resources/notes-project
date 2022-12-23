@@ -1,3 +1,32 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="m1" contentId="m1">
+    <ion-header>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle>
+        <h1>Notes</h1>
+        <ion-list>
+          <div class="row" lines="none" routerLink="/app/dashboard">
+            <ion-icon name="easel-outline"></ion-icon>
+            <p>Dashboard</p>
+          </div>
+          <div class="row" lines="none" routerLink="/app/notes">
+            <ion-icon name="folder-outline"></ion-icon>
+            <p>Notes</p>
+          </div>
+          <a href="https://github.com/sanchez-cristian-resources/notes-project">
+            <div class="row" lines="none" >
+              <ion-icon name="git-branch-outline"></ion-icon>
+              <p>Github repo</p>
+            </div>
+          </a>
+          <div class="row" lines="none" id="last" (click)="logout()">
+            <ion-icon name="return-down-back-outline"></ion-icon>
+            <p>Logout</p>
+          </div>
+        </ion-list>
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main id="m1"></ion-router-outlet>
 </ion-app>

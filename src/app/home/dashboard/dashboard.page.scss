@@ -1,0 +1,15 @@
+* {
+    padding: 0px; 
+    margin: 0px; 
+}
+
+ion-header {
+    all: unset;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+}
+
+ion-menu-button {
+    margin: 20px; 
+}

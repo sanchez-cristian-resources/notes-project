@@ -10,6 +10,10 @@ ion-header {
     justify-content: flex-start;
 }
 
+ion-menu-button {
+    margin: 20px; 
+}
+
 ion-list {
     gap: 10px; 
     padding-inline: 20px;
