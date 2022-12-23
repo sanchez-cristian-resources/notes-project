@@ -24,3 +24,10 @@ You need to have the following installed on your machine
 The app is using firebase realtime database to store the notes data and simulate local authentication. With reactive paradigm, we can implement the CRUD operations on the notes data.
 
 The project also have the components approach to build the app. The components are reusable and can be used in other projects. But the components are not published to npm yet.
+
+## Final result
+![wireframe](./src/assets/final.png)
+
+## Author
+Cristian Sánchez.
+I'm a frontend developer and I'm passionate about web development. I'm currently study microcomputer systems and networks in Bilbao Spain.
