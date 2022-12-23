@@ -2,7 +2,7 @@
     <h1>
         {{note.title}}
     </h1>
-    <p>
+    <p id="author-card">
         {{note.author}}
     </p>
     <div id="bottom-row">
@@ -15,7 +15,7 @@
         <div class="bottom-row-item">
             <ion-icon name="flag-outline"></ion-icon>
             <p>
-                {{note.lastEditAt}}
+                {{note.lastEditAt.toString() | date:'dd/MM/yyyy'}}
             </p>
         </div>
     </div>

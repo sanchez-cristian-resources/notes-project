@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Note } from '../models/note.model';
 import { NotesService } from '../services/notes.service';
 
@@ -12,6 +13,7 @@ export class NotesPage implements OnInit {
   variableNotes: Note[]
   
   constructor(
+    private navController: NavController,
     private notesService: NotesService
   ) { 
     this.notes = this.resfreshNotes()
@@ -61,5 +63,9 @@ export class NotesPage implements OnInit {
     })
 
     this.variableNotes = tempNotes.filter(note => note !== null)
+  }
+
+  create() {
+    this.navController.navigateRoot('/create')
   }
 }

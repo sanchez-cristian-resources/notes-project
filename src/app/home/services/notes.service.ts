@@ -50,11 +50,27 @@ export class NotesService {
   }
 
   addNote( note: Note ) {
+    let generatedId: string;
+
     return this.http
-      .post<Note>(
-        'https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/nuevas.json', 
-        {...note}    
-      )
+    .post<{ name: string }>(
+      'https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes.json',
+      {
+        ...note,
+        id: null
+      }
+    )
+    .pipe(
+      switchMap(resData => {
+        generatedId = resData.name;
+        return this.notes;
+      }),
+      take(1),
+      tap(notes => {
+        note.id = generatedId;
+        this._notes.next(notes.concat(note));
+      })
+    );
   }
 
   getNote(id: string) {
