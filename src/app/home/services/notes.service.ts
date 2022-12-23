@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Note } from '../models/note.model';
-import { tap, map, BehaviorSubject } from 'rxjs';
+import { tap, map, BehaviorSubject, take, switchMap, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -83,5 +83,41 @@ export class NotesService {
       .delete(
         `https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes/${id}.json`
       )
+  }
+
+  updateNote(id: string, note: Note) {
+    let updatedNotes: Note[];
+    return this.notes.pipe(
+      take(1),
+      switchMap(notes => {
+        if (!notes || notes.length <= 0) {
+          return this.getNotes();
+        } else {
+          return of(notes);
+        }
+      }),
+      switchMap(notes => {
+        const updatedNoteIndex = notes.findIndex(note => note.id === id);
+        updatedNotes = [...notes];
+        const oldPlace = updatedNotes[updatedNoteIndex];
+        updatedNotes[updatedNoteIndex] = new Note(
+          oldPlace.id,
+          note.author,
+          note.title,
+          note.content,
+          oldPlace.tags,
+          oldPlace.length,
+          oldPlace.createdAt,
+          note.lastEditAt
+        );
+        return this.http.put(
+            `https://notes-57739-default-rtdb.europe-west1.firebasedatabase.app/notes/${id}.json`,
+            { ...updatedNotes[updatedNoteIndex], id: null }
+        );
+      }),
+      tap(() => {
+        this._notes.next(updatedNotes);
+      })
+    );
   }
 }

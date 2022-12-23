@@ -5,34 +5,11 @@
 </ion-header>
 
 <ion-content [scrollY]="false">
-    <input id="title" [defaultValue]="note.title"/>
-    <input id="author" [defaultValue]="note.author"/>
-  <textarea [value]="note.content"></textarea>
+  <input id="title" [defaultValue]="note.title"/>
+  <input id="author" [defaultValue]="note.author"/>
+  <textarea id="content" [value]="note.content"></textarea>
   <div id="row">
     <button id="delete" (click)="deleteNote()">Delete</button>
-    <button id="save">Save</button>
+    <button id="save" (click)="updateNote()">Save</button>
   </div>
 </ion-content>
-
-
-
-<!-- <form id="note-container" [formGroup]="editNoteForm">
-  <div id="headers-container">
-    <input 
-      id="title" 
-      value="{{ note.title || 'Title' }}" 
-      formControlName="title"
-    >
-    <input 
-      id="author" 
-      value="{{ note.author || 'Author name' }}" 
-      formControlName="author"  
-    >
-  </div>
-  <div id="textarea-container">
-      <p id="char-counter">{{content.value.length}} Chars </p>
-      <textarea
-          formControlName="content"
-      ></textarea>
-  </div>
-</form> -->

@@ -71,4 +71,30 @@ export class EditDetailsPage implements OnInit {
     );
   }
 
+  updateNote() {
+    const title = (<HTMLInputElement>document.querySelector('#title')).value
+    const author = (<HTMLInputElement>document.querySelector('#author')).value
+    const content = (<HTMLInputElement>document.querySelector('#content')).value
+    
+    const newNote = {
+        ...this.note,
+        title: title,
+        author: author,
+        content: content,
+        lastEditAt: new Date().getTime()
+    }
+
+    console.log(newNote, newNote.author)
+
+    this.notesService
+        .updateNote(this.note.id, newNote)
+        .subscribe((note) => {
+            console.log(note)
+            const button = document.querySelector('#save')
+            button.innerHTML = 'Saved'
+            window.location.pathname = '/app/notes'
+        }
+    );
+  }
+
 }
