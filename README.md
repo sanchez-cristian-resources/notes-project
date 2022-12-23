@@ -2,7 +2,7 @@
 This is a simple notes app project that allows users to create, read, update and delete notes on the firebase realtime database.
 
 ## Wireframes
-![wireframe](https://drive.google.com/file/d/1wS9Y1V8iRf3i98rWjaYJFNPTHXWDPvoZ/view?usp=share_link)
+![wireframe](./src/assets/wireframes.png)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
