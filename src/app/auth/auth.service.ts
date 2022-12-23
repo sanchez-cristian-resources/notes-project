@@ -8,7 +8,6 @@ export class AuthService {
   private _logged  = false
   constructor() { }
 
-
   get logged() {
     return this._logged
   }

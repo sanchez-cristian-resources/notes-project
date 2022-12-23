@@ -1,9 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
+    <ion-buttons>
+        <ion-menu-button color="primary" autoHide="false" menu="m1">
+        </ion-menu-button>
+    </ion-buttons>
 </ion-header>
-
 <ion-content>
+    <div id="wrapper">
+        <h1>Dashboard</h1>
+        <div class="row">
+            <div id="circle">
+                <span class="count">{{notes.length}}</span>
+            </div>
+            <p>Notes availables to read</p>
+        </div>
+        <div class="row">
+            <div id="circle">
+                <span class="count">{{authors.length}}</span>
+            </div>
+            <p>Passionate writers</p>
+        </div>
 
+        <h1 id="latest">Latest note</h1>
+        <div id="card-container" (click)="goLatest()">
+            <p id="dashboard-title">{{note.title}}</p>
+            <p id="dashboard-author">{{note.author}}</p>
+        </div>
+    </div>
 </ion-content>
