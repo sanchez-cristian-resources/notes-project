@@ -13,3 +13,85 @@ ion-header {
 ion-menu-button {
     margin: 20px; 
 }
+
+#wrapper {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin: 20px; 
+    height: 100%;
+}
+
+#circle {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 200px;
+    background-color: #217dff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000; 
+    margin-bottom: 40px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 10px; 
+    padding-inline: 20px;
+}
+
+.count {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff; 
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000; 
+    margin-bottom: 30px; 
+}
+
+
+#card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #ececec;
+    margin-top: 20px;
+}
+
+#dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000; 
+    margin-bottom: 5px; 
+    margin-top: 20px; ;
+}
+
+#dashboard-author {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #898998; 
+    margin-bottom: 30px; 
+}
+
+#latest {
+    margin-top: 30px; 
+}
