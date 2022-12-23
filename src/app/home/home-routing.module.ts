@@ -16,6 +16,11 @@ const routes: Routes = [
             path: 'notes',
             loadChildren: () => import('./notes/notes.module').then( m => m.NotesPageModule)
         },
+        {
+            path: '',
+            redirectTo: '/app/dashboard',
+            pathMatch: 'full'
+        }
     ]
   }
 ];
