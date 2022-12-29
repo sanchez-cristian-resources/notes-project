@@ -25,6 +25,9 @@ The app is using firebase realtime database to store the notes data and simulate
 
 The project also have the components approach to build the app. The components are reusable and can be used in other projects. But the components are not published to npm yet.
 
+## Time management software
+[Github Projects](https://github.com/users/sanchez-cristian-resources/projects/2/views/1)
+
 ## Final result
 ![wireframe](./src/assets/final.png)
 
