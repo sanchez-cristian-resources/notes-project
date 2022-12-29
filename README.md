@@ -28,6 +28,9 @@ The project also have the components approach to build the app. The components a
 ## Time management software
 [Github Projects](https://github.com/users/sanchez-cristian-resources/projects/2/views/1)
 
+## Project presentation
+[Google slides](https://docs.google.com/presentation/d/1Wmg9JKaGU9BK-cR-nr3HMlVwiA68P8TSivYLbt1Nh6w/edit?usp=sharing)
+
 ## Final result
 ![wireframe](./src/assets/final.png)
 
